@@ -2,17 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Research Paper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expanding the Pythagorean Theorem</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin: 100px auto;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            font-size: 40px;
+        }
+        p {
+            font-size: 20px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 18px;
+            color: white;
+            background: #ff9800;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #e65100;
+            transform: scale(1.1);
+        }
+        .download-count {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #ffd700;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Research Paper</h1>
-    <p>Here you can download my research paper:</p>
-    
-    <h2>Download the Paper</h2>
-    <h1>Expanding the Pythagorean Theorem</h1>
-<p>By Aatresh</p>
-<p><a href="Saraswati_Geometry_Aatresh.pdf" target="_blank">Read the Research Paper (PDF)</a></p>
+
+    <div class="container">
+        <h1>📘 Expanding the Pythagorean Theorem</h1>
+        <p><b>By Aatresh</b></p>
+        <p>This research paper explores new possibilities in geometry.</p>
+        
+        <!-- Button to download PDF -->
+        <a class="btn" id="downloadBtn" href="Saraswati_Geometry_Aatresh.pdf" download>
+            📄 Read the Paper (PDF)
+        </a>
+        
+        <!-- Download Counter -->
+        <p class="download-count" id="downloadCounter">Downloads: 0</p>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Load previous download count from local storage
+        let downloadCount = localStorage.getItem("downloadCount") || 0;
+        document.getElementById("downloadCounter").textContent = "Downloads: " + downloadCount;
+
+        // Add event listener to track downloads
+        document.getElementById("downloadBtn").addEventListener("click", function() {
+            downloadCount++;
+            localStorage.setItem("downloadCount", downloadCount);
+            document.getElementById("downloadCounter").textContent = "Downloads: " + downloadCount;
+        });
+
+        // Console log (for debugging)
+        console.log("Website loaded successfully!");
+    </script>
 
 </body>
 </html>
